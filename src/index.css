@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --burgundy:   #621132;
+  --olive:      #6a7f58;
+  --teal:       #355c65;
+  --cream:      #faf9f6;
+  --gray:       #4f4f4f;
+  --cream-dark: #f0ede6;
+  --white:      #ffffff;
+  --gray-light: #8a8a8a;
+}
+
+html { scroll-behavior: smooth; overflow-x: hidden; }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--cream);
+  color: var(--gray);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+#root { width: 100%; overflow-x: hidden; }
+
+h1, h2, h3 { font-family: 'Cormorant Garamond', serif; line-height: 1.1; }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+
+/* ── Tile bg ── */
+.tile-bg {
+  background-color: var(--cream);
+  background-image:
+    linear-gradient(rgba(53,92,101,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(53,92,101,0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* ── Section title ── */
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  font-weight: 600;
+  color: var(--teal);
+  margin-bottom: 56px;
+  text-align: center;
+}
+
+/* ── Buttons ── */
+.btn-whatsapp {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #25d366; color: #fff;
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
+  font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 16px 36px; border-radius: 50px; border: none;
+  cursor: pointer; transition: all 0.25s; white-space: nowrap;
+}
+.btn-whatsapp:hover { background: #1da851; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.3); }
+
+.btn-teal {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--teal); color: var(--white);
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
+  font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 14px 32px; border-radius: 50px; border: none;
+  cursor: pointer; transition: all 0.25s;
+}
+.btn-teal:hover { background: #264650; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(53,92,101,0.3); }
+
+.btn-outline-teal {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent; color: var(--teal);
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
+  font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 13px 30px; border-radius: 50px; border: 2px solid var(--teal);
+  cursor: pointer; transition: all 0.25s;
+}
+.btn-outline-teal:hover { background: var(--teal); color: white; }
+
+/* ── WA floating pulse ── */
+@keyframes waPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+  70%  { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+
+/* ── Check list ── */
+.check-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.check-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--gray); line-height: 1.55; }
+
+@media (max-width: 768px) {
+  .container { padding: 0 20px; }
+  .section-title { margin-bottom: 36px; }
+}
