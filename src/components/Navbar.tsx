@@ -7,12 +7,13 @@ import logoHorizontal from '../assets/logo-horizontal.jpeg'
 const WA = 'https://wa.me/5522998491818?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20trabalho%20da%20dra.%20Raiane.%20%F0%9F%AB%80'
 
 const links = [
-  { label: 'Início', href: '#hero', id: 'hero' },
-  { label: 'Sobre', href: '#sobre', id: 'sobre' },
-  { label: 'Serviços', href: '#jornada', id: 'jornada' },
-  { label: 'Exames', href: '#exames', id: 'exames' },
-  { label: 'Planos', href: '#planos', id: 'planos' },
-  { label: 'Contato', href: '#contato', id: 'contato' },
+  { label: 'Início',     href: '#hero',      id: 'hero'      },
+  { label: 'Sobre',      href: '#sobre',     id: 'sobre'     },
+  { label: 'Serviços',   href: '#jornada',   id: 'jornada'   },
+  { label: 'Check-ups',  href: '#checkups',  id: 'checkups'  },
+  { label: 'Clínica',    href: '#clinica',   id: 'clinica'   },
+  { label: 'Planos',     href: '#planos',    id: 'planos'    },
+  { label: 'Contato',    href: '#contato',   id: 'contato'   },
 ]
 
 export default function Navbar() {

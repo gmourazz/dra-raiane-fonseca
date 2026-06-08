@@ -161,7 +161,8 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.88, duration: 0.6 }}
-            style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}
+            className="hero-ctas"
+          style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}
           >
             <a href={WA} target="_blank" rel="noopener noreferrer" className="btn-whatsapp">
               <WhatsAppIcon size={17} />
@@ -175,6 +176,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.1, duration: 0.6 }}
+            className="hero-stats"
             style={{
               display: 'flex', gap: 0, marginTop: 48,
               borderTop: '1px solid rgba(53,92,101,0.15)',
@@ -210,6 +212,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.5, duration: 0.8, ease: 'easeOut' }}
+          className="hero-photo-col"
           style={{ position: 'relative' }}
         >
           <div style={{
@@ -250,6 +253,7 @@ export default function Hero() {
 
           {/* Mini foto secundária flutuante */}
           <motion.div
+            className="hero-badge"
             animate={{ y: [-4, 4, -4] }}
             transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut' }}
             style={{
@@ -266,6 +270,7 @@ export default function Hero() {
 
           {/* Badge: avaliação */}
           <motion.div
+            className="hero-badge"
             animate={{ y: [-5, 5, -5] }}
             transition={{ repeat: Infinity, duration: 3.5, ease: 'easeInOut' }}
             style={{
@@ -285,6 +290,7 @@ export default function Hero() {
 
           {/* Badge: meia maratonista */}
           <motion.div
+            className="hero-badge"
             animate={{ y: [4, -4, 4] }}
             transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
             style={{
@@ -323,8 +329,26 @@ export default function Hero() {
 
       <style>{`
         @media (max-width: 900px) {
-          #hero .container { grid-template-columns: 1fr !important; gap: 40px !important; }
-          #hero .container > div:last-child { display: none !important; }
+          #hero .container { grid-template-columns: 1fr !important; gap: 24px !important; }
+          #hero .hero-photo-col { order: -1; }
+          #hero .hero-photo-col img { height: 420px !important; object-position: top center !important; }
+          #hero .hero-badge { display: none !important; }
+          #hero .hero-photo-col > div:nth-child(1),
+          #hero .hero-photo-col > div:nth-child(2) { display: none !important; }
+        }
+        @media (max-width: 768px) {
+          #hero .container { padding-top: 88px !important; padding-bottom: 48px !important; }
+          #hero h1 { font-size: 2.8rem !important; line-height: 1.05 !important; }
+          #hero .hero-photo-col img { height: 380px !important; }
+        }
+        @media (max-width: 480px) {
+          #hero .container { padding-top: 84px !important; padding-bottom: 36px !important; }
+          #hero h1 { font-size: 2.4rem !important; }
+          #hero .hero-photo-col img { height: 340px !important; }
+          #hero .hero-ctas { flex-direction: column !important; gap: 10px !important; }
+          #hero .hero-ctas a { width: 100% !important; justify-content: center !important; }
+          #hero .hero-stats { margin-top: 32px !important; }
+          #hero .hero-stats > div { padding: 0 10px !important; }
         }
       `}</style>
     </section>

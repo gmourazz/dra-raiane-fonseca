@@ -194,10 +194,11 @@ export default function PlanosAcompanhamento() {
       <style>{`
         @media (max-width: 768px) {
           #planos .container > div:last-child { grid-template-columns: 1fr !important; }
-        }
-        @media (max-width: 640px) {
           #planos .container > div:nth-child(3) > div:last-child { grid-template-columns: repeat(2, 1fr) !important; }
           #planos .container > div:nth-child(3) > div:first-child { display: none !important; }
+        }
+        @media (max-width: 480px) {
+          #planos .container > div:nth-child(3) > div:last-child { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </section>

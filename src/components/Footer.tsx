@@ -90,7 +90,7 @@ export default function Footer() {
 
         <style>{`
           @media (max-width: 768px) {
-            footer > div:last-child .container > div:first-child { grid-template-columns: 1fr !important; gap: 32px !important; }
+            footer > div .container > div:first-child { grid-template-columns: 1fr !important; gap: 32px !important; }
           }
         `}</style>
       </div>

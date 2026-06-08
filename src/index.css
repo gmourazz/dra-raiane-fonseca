@@ -95,4 +95,16 @@ a { text-decoration: none; color: inherit; }
 @media (max-width: 768px) {
   .container { padding: 0 20px; }
   .section-title { margin-bottom: 36px; }
+  section[style*="padding: '112px 0'"],
+  section[style*='padding: "112px 0"'] { padding: 72px 0 !important; }
+}
+
+@media (max-width: 768px) {
+  section { padding-top: 72px !important; padding-bottom: 72px !important; }
+}
+
+@media (max-width: 480px) {
+  section { padding-top: 56px !important; padding-bottom: 56px !important; }
+  .btn-whatsapp { font-size: 12px !important; padding: 14px 22px !important; }
+  .btn-outline-teal { font-size: 12px !important; padding: 12px 20px !important; }
 }

@@ -245,6 +245,8 @@ export default function Depoimentos() {
         }
         @media (max-width: 960px) {
           #depoimentos .container > div:nth-child(2) > div > div > div { grid-template-columns: 1fr !important; }
+          #depoimentos .container > div:nth-child(2) > button:first-of-type { left: -20px !important; }
+          #depoimentos .container > div:nth-child(2) > button:last-of-type { right: -20px !important; }
         }
         @media (max-width: 600px) {
           #depoimentos .container > div:nth-child(2) > button { display: none !important; }

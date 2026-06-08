@@ -14,7 +14,7 @@ export default function MissaoVisaoValores() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section style={{ background: 'var(--cream)', padding: '112px 0', overflow: 'hidden' }}>
+    <section id="essencia" style={{ background: 'var(--cream)', padding: '112px 0', overflow: 'hidden' }}>
       <div
         className="container"
         ref={ref}
@@ -124,10 +124,8 @@ export default function MissaoVisaoValores() {
 
       <style>{`
         @media (max-width: 900px) {
-          section .container[style*="grid-template-columns: 1fr 1.15fr"] {
-            grid-template-columns: 1fr !important;
-            gap: 40px !important;
-          }
+          #essencia .container { grid-template-columns: 1fr !important; gap: 40px !important; }
+          #essencia .container > div:first-child { display: none !important; }
         }
       `}</style>
     </section>

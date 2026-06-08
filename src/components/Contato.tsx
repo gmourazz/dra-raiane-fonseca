@@ -186,7 +186,12 @@ export default function Contato() {
       <style>{`
         @media (max-width: 900px) {
           #contato .container > div:last-child { flex-direction: column !important; align-items: stretch !important; }
-          #contato .container > div:last-child > div:last-child { align-items: center !important; }
+          #contato .container > div:last-child > div:last-child { width: 100% !important; flex-shrink: 1 !important; }
+          #contato .container > div:last-child > div:first-child { min-width: 0 !important; padding: 32px 28px !important; }
+        }
+        @media (max-width: 480px) {
+          #contato .container > div:last-child > div:first-child { padding: 28px 20px !important; }
+          #contato .container > div:first-child { margin-bottom: 40px !important; }
         }
       `}</style>
     </section>
