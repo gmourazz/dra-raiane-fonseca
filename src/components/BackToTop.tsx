@@ -23,11 +23,11 @@ export default function BackToTop() {
           aria-label="Voltar ao topo"
           style={{
             position: 'fixed',
-            bottom: 100,
+            bottom: 92,
             right: 28,
             zIndex: 998,
-            width: 46,
-            height: 46,
+            width: 52,
+            height: 52,
             borderRadius: '50%',
             background: 'var(--teal)',
             border: 'none',
@@ -43,7 +43,7 @@ export default function BackToTop() {
           whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.93 }}
         >
-          <ArrowUp size={20} color="white" />
+          <ArrowUp size={22} color="white" />
         </motion.button>
       )}
     </AnimatePresence>

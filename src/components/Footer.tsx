@@ -1,4 +1,5 @@
-import { MessageCircle, AtSign, MapPin } from 'lucide-react'
+import { AtSign, MapPin } from 'lucide-react'
+import WhatsAppIcon from './WhatsAppIcon'
 
 const WA_LINK = 'https://wa.me/5522998491818?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20trabalho%20da%20dra.%20Raiane.%20%F0%9F%AB%80'
 
@@ -60,8 +61,8 @@ export default function Footer() {
                   onMouseEnter={e => (e.currentTarget.style.opacity = '0.75')}
                   onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
                 >
-                  <div style={{ width: 34, height: 34, borderRadius: '50%', background: '#25d366', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <MessageCircle size={16} color="white" />
+                  <div style={{ width: 34, height: 34, borderRadius: '50%', background: '#25d366', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, color: 'white' }}>
+                    <WhatsAppIcon size={16} />
                   </div>
                   <div>
                     <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 10, color: 'rgba(255,255,255,0.35)', marginBottom: 1, textTransform: 'uppercase', letterSpacing: '0.1em' }}>WhatsApp</p>

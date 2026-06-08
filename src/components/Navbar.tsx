@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, MessageCircle } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
+import WhatsAppIcon from './WhatsAppIcon'
+import logoHorizontal from '../assets/logo-horizontal.jpeg'
 
 const WA = 'https://wa.me/5522998491818?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20trabalho%20da%20dra.%20Raiane.%20%F0%9F%AB%80'
 
@@ -54,13 +56,12 @@ export default function Navbar() {
         }}
       >
         <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 72 }}>
-          <a href="#hero" style={{ display: 'flex', flexDirection: 'column', gap: 1, textDecoration: 'none' }}>
-            <span style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 800, fontSize: 13, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--burgundy)' }}>
-              Dra. Raiane Fonseca
-            </span>
-            <span style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 400, fontSize: 9, letterSpacing: '0.24em', textTransform: 'uppercase', color: 'var(--teal)' }}>
-              Cardiologia · Medicina do Estilo de Vida
-            </span>
+          <a href="#hero" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+            <img
+              src={logoHorizontal}
+              alt="Dra. Raiane Fonseca"
+              style={{ height: 46, objectFit: 'contain', maxWidth: 230 }}
+            />
           </a>
 
           <nav style={{ display: 'flex', gap: 4, alignItems: 'center' }} className="nav-desktop">
@@ -111,7 +112,7 @@ export default function Navbar() {
               onMouseEnter={e => { e.currentTarget.style.background = '#1da851'; e.currentTarget.style.transform = 'translateY(-1px)' }}
               onMouseLeave={e => { e.currentTarget.style.background = '#25d366'; e.currentTarget.style.transform = 'translateY(0)' }}
             >
-              <MessageCircle size={13} />
+              <WhatsAppIcon size={14} />
               Agendar
             </a>
           </nav>
@@ -149,7 +150,7 @@ export default function Navbar() {
                   >{l.label}</a>
                 ))}
                 <a href={WA} target="_blank" rel="noopener noreferrer" className="btn-whatsapp" style={{ justifyContent: 'center', marginTop: 12 }}>
-                  <MessageCircle size={16} />
+                  <WhatsAppIcon size={16} />
                   Agendar Consulta
                 </a>
               </div>

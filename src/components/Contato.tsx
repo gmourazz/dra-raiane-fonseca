@@ -1,7 +1,7 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { MapPin, Phone, Mail, AtSign, MessageCircle, Navigation } from 'lucide-react'
-
+import { MapPin, Phone, Mail, AtSign, Navigation } from 'lucide-react'
+import WhatsAppIcon from './WhatsAppIcon'
 const WA = 'https://wa.me/5522998491818?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20trabalho%20da%20dra.%20Raiane.%20%F0%9F%AB%80'
 const MAPS_LINK = 'https://www.google.com/maps/place/OSTRACOR+-+Dra.+Raiane+Fonseca/@-22.5285777,-41.955744,15z'
 
@@ -13,15 +13,25 @@ export default function Contato() {
     <section id="contato" style={{ background: 'var(--cream)', padding: '112px 0' }}>
       <div className="container" ref={ref}>
 
-        <motion.p
-          initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}
-          style={{ textAlign: 'center', fontFamily: "'Montserrat', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', color: 'var(--teal)', marginBottom: 12 }}
-        >Onde me encontrar</motion.p>
+        {/* ==================== HEADER ==================== */}
+        <div style={{ marginBottom: 64 }}>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}
+            style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', color: 'var(--teal)', marginBottom: 12 }}
+          >Onde me encontrar</motion.p>
 
-        <motion.h2
-          initial={{ opacity: 0, y: 28 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.1, duration: 0.7 }}
-          className="section-title" style={{ marginTop: 0, marginBottom: 52 }}
-        >Local de Atendimento e Contatos</motion.h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 28 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.1, duration: 0.7 }}
+            style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2.2rem, 3.5vw, 3.2rem)', fontWeight: 600, color: 'var(--teal)', lineHeight: 1.1, marginBottom: 20 }}
+          >Local de Atendimento e Contatos</motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.2, duration: 0.6 }}
+            style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, color: 'var(--gray)', lineHeight: 1.78 }}
+          >
+            Atendimento presencial em Rio das Ostras, RJ e online para todo o Brasil.
+          </motion.p>
+        </div>
 
         <div style={{ display: 'flex', gap: 28, alignItems: 'stretch', flexWrap: 'wrap' }}>
 
@@ -50,7 +60,7 @@ export default function Contato() {
                 <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14.5, color: 'var(--gray)', lineHeight: 1.75 }}>
                   Rua Santa Catarina nº 219, Sala 104<br />
                   Extensão do Bosque · <strong style={{ color: 'var(--teal)' }}>OSTRACOR</strong><br />
-                  Rio das Ostras — RJ
+                  Rio das Ostras, RJ
                 </p>
               </div>
             </div>
@@ -88,7 +98,7 @@ export default function Contato() {
             {/* CTAs */}
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 'auto' }}>
               <a href={WA} target="_blank" rel="noopener noreferrer" className="btn-whatsapp">
-                <MessageCircle size={16} />
+                <WhatsAppIcon size={16} />
                 Agendar Consulta
               </a>
               <a href={MAPS_LINK} target="_blank" rel="noopener noreferrer"
@@ -132,7 +142,7 @@ export default function Contato() {
               </div>
               <div>
                 <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 700, fontSize: 10, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--burgundy)', marginBottom: 1 }}>Localização</p>
-                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, color: 'var(--gray)', opacity: 0.7 }}>Rio das Ostras — RJ</p>
+                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, color: 'var(--gray)', opacity: 0.7 }}>Rio das Ostras, RJ</p>
               </div>
             </div>
 

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
 import { ChevronLeft, ChevronRight, Star, ExternalLink } from 'lucide-react'
+import fotoComputador from '../assets/foto-com-computador-raiane.jpeg'
 
 const GOOGLE = 'https://www.google.com/maps/place/Raiane+Fonseca+Silva+Herdy/@-22.5285777,-41.955744,15z/data=!4m16!1m9!3m8!1s0x97b3b68f3da677:0x876570a7a3f11af6!2sRaiane+Fonseca+Silva+Herdy!8m2!3d-22.5285777!4d-41.955744!9m1!1b1!16s%2Fg%2F11vyylkvp0'
 
@@ -11,7 +12,7 @@ const reviews = [
   { name: 'Ana Cristina Segundo', time: 'Há 9 semanas', initials: 'AS', color: '#355c65', text: 'Ambiente harmonizado e acolhedor! Profissional com uma escuta de qualidade, atenciosa e bastante criteriosa. Confiante que vou ficar bem.' },
   { name: 'Iracilda Granja', time: 'Há 4 semanas', initials: 'IG', color: '#621132', text: 'Fiquei bastante confiante em todas as orientações, exames e procedimentos durante a consulta. Muito simpática. Obrigada, dra.Raiane!' },
   { name: 'Hellen Alves', time: 'Há 2 dias', initials: 'HA', color: '#6a7f58', text: 'Adorei fazer o exame de holter com Dra Raiane, equipamento moderno, prático e incômodo praticamente nenhum... RECOMENDO!!!' },
-  { name: 'Camilla Tavares', time: 'Há 3 semanas', initials: 'CT', color: '#355c65', text: 'Dra Raiane é incrível! Fui super bem atendida, ela explica tudo com detalhes e paciência. A consulta durou quase 1 hora — primeira vez que saí de uma consulta sentindo que fui ouvida de verdade.' },
+  { name: 'Camilla Tavares', time: 'Há 3 semanas', initials: 'CT', color: '#355c65', text: 'Dra Raiane é incrível! Fui super bem atendida, ela explica tudo com detalhes e paciência. A consulta durou quase 1 hora, a primeira vez que saí de uma consulta sentindo que fui ouvida de verdade.' },
   { name: 'Fernanda Lima', time: 'Há 5 semanas', initials: 'FL', color: '#621132', text: 'Profissional excepcional. Fiz ecocardiograma e ela explicou resultado com muito cuidado. Já indiquei para toda a família. Espaço aconchegante e atendimento humanizado.' },
   { name: 'Paulo Henrique Santos', time: 'Há 6 semanas', initials: 'PH', color: '#6a7f58', text: 'Realizei minha avaliação pré-operatória com a Dra Raiane. Muito competente e atenciosa. Me deixou completamente tranquilo para o procedimento. Recomendo de olhos fechados.' },
   { name: 'Marcia Oliveira', time: 'Há 2 meses', initials: 'MO', color: '#355c65', text: 'Excelente médica! Fez MAPA 24h e acompanha minha pressão com muito cuidado. A diferença que o tratamento fez na minha qualidade de vida é enorme. Muito grata!' },
@@ -70,23 +71,39 @@ export default function Depoimentos() {
       style={{ background: '#1d3c46', padding: '112px 0', overflow: 'hidden' }}
     >
       <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 28 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7 }}
-          style={{ textAlign: 'center', marginBottom: 16 }}
-        >
-          <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', marginBottom: 14 }}>Avaliações reais</p>
-          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: 'clamp(2.4rem, 4vw, 3.6rem)', color: 'white', lineHeight: 1.1, marginBottom: 14 }}>
-            O que dizem os pacientes
-          </h2>
-          <p style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', fontSize: 20, color: 'rgba(255,255,255,0.55)' }}>
-            Como foi a experiência do nosso encontro para você?
-          </p>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, marginTop: 20 }}>
-            {[...Array(5)].map((_, i) => <Star key={i} size={18} fill="#f4a100" color="#f4a100" />)}
-            <span style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 800, fontSize: 18, color: 'white', marginLeft: 6 }}>5.0</span>
-            <span style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 13, color: 'rgba(255,255,255,0.45)' }}>· 137 avaliações no Google</span>
-          </div>
-        </motion.div>
+        {/* ==================== HEADER COM FOTO ==================== */}
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: 56, alignItems: 'center', marginBottom: 56 }}>
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.85, ease: 'easeOut' }}
+          >
+            <div style={{ borderRadius: 24, overflow: 'hidden', boxShadow: '0 20px 56px rgba(0,0,0,0.45)' }}>
+              <img
+                src={fotoComputador}
+                alt="Dra. Raiane Fonseca"
+                style={{ width: '100%', height: 'auto', display: 'block' }}
+              />
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 28 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', marginBottom: 14 }}>Avaliações reais</p>
+            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: 'clamp(2.4rem, 4vw, 3.6rem)', color: 'white', lineHeight: 1.1, marginBottom: 14 }}>
+              O que dizem os pacientes
+            </h2>
+            <p style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', fontSize: 20, color: 'rgba(255,255,255,0.55)', marginBottom: 20 }}>
+              Como foi a experiência do nosso encontro para você?
+            </p>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+              {[...Array(5)].map((_, i) => <Star key={i} size={18} fill="#f4a100" color="#f4a100" />)}
+              <span style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 800, fontSize: 18, color: 'white', marginLeft: 6 }}>5.0</span>
+              <span style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 13, color: 'rgba(255,255,255,0.45)' }}>· 137 avaliações no Google</span>
+            </div>
+          </motion.div>
+        </div>
 
         {/* Carousel */}
         <div
@@ -222,6 +239,10 @@ export default function Depoimentos() {
       </div>
 
       <style>{`
+        @media (max-width: 900px) {
+          #depoimentos .container > div:first-child { grid-template-columns: 1fr !important; gap: 40px !important; }
+          #depoimentos .container > div:first-child > div:first-child { display: none !important; }
+        }
         @media (max-width: 960px) {
           #depoimentos .container > div:nth-child(2) > div > div > div { grid-template-columns: 1fr !important; }
         }

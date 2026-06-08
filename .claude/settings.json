@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir \"c:\\\\Users\\\\geovannamoura\\\\Documents\\\\Geovanna\\\\dra-raiane-fonseca\\\\public\\\\img\" /b)",
+      "Bash(Copy-Item \"c:\\\\Users\\\\geovannamoura\\\\Documents\\\\Geovanna\\\\dra-raiane-fonseca\\\\src\\\\assets\\\\logo-vertical-so-icone.PNG\" \"c:\\\\Users\\\\geovannamoura\\\\Documents\\\\Geovanna\\\\dra-raiane-fonseca\\\\public\\\\favicon.png\")"
+    ]
+  }
+}

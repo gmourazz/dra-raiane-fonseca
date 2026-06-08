@@ -1,6 +1,8 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Heart, Activity, Stethoscope, CheckCircle2, MessageCircle } from 'lucide-react'
+import { Heart, Activity, Stethoscope, CheckCircle2 } from 'lucide-react'
+import WhatsAppIcon from './WhatsAppIcon'
+import fotoJornada from '../assets/foto-raiane-jornada.jpeg'
 
 const WA = 'https://wa.me/5522998491818?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20trabalho%20da%20dra.%20Raiane.%20%F0%9F%AB%80'
 
@@ -12,8 +14,8 @@ const services = [
   },
   {
     icon: Activity, title: 'Acompanhamento e Transformação', color: 'var(--burgundy)',
-    description: 'Para quem quer sair do piloto automático e construir saúde de forma consistente — reduzindo o risco de infarto e AVC.',
-    items: ['Mudança de hábitos', 'Estratégia personalizada', 'Seguimento contínuo'],
+    description: 'Para quem quer construir saúde de forma consistente. Cada hábito é acompanhado com dados reais de adesão, semana a semana.',
+    items: ['Mudança de hábitos', 'Estratégia personalizada', 'Monitoramento de adesão', 'Seguimento contínuo'],
   },
   {
     icon: Stethoscope, title: 'Avaliação Pré-Operatória', subtitle: 'Risco Cirúrgico', color: 'var(--olive)',
@@ -55,7 +57,7 @@ export default function JornadaCuidado() {
             position: 'relative', zIndex: 1,
           }}>
             <img
-              src="/img/jornada.jpeg"
+              src={fotoJornada}
               alt="Dra. Raiane Fonseca"
               style={{ width: '100%', height: 640, objectFit: 'cover', objectPosition: 'center top' }}
             />
@@ -138,7 +140,7 @@ export default function JornadaCuidado() {
 
                   <div style={{ flex: 1 }}>
                     <h3 style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, fontWeight: 700, color: s.color, marginBottom: s.subtitle ? 2 : 8, lineHeight: 1.3 }}>{s.title}</h3>
-                    {s.subtitle && <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, color: 'var(--gray-light)', marginBottom: 8 }}>— {s.subtitle}</p>}
+                    {s.subtitle && <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 11, color: 'var(--gray-light)', marginBottom: 8 }}>{s.subtitle}</p>}
                     <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 12.5, color: 'var(--gray)', lineHeight: 1.7, marginBottom: 10 }}>{s.description}</p>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
                       {s.items.map(item => (
@@ -161,7 +163,7 @@ export default function JornadaCuidado() {
             style={{ marginTop: 32 }}
           >
             <a href={WA} target="_blank" rel="noopener noreferrer" className="btn-whatsapp">
-              <MessageCircle size={17} />
+              <WhatsAppIcon size={17} />
               Agendar Consulta Particular
             </a>
           </motion.div>
