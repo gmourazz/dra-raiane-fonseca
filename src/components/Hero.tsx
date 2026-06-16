@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ChevronDown, Heart, Award, Clock } from 'lucide-react'
+import { ChevronDown, Heart, Award, Clock, Activity } from 'lucide-react'
 import WhatsAppIcon from './WhatsAppIcon'
 import heroFoto from '../assets/home-inicial.jpeg'
 import heroSecundaria from '../assets/home-secundaria.jpeg'
@@ -39,7 +39,7 @@ export default function Hero() {
         zIndex: 0,
       }} />
 
-      <div className="container" style={{
+      <div className="container hero-container" style={{
         position: 'relative', zIndex: 2,
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
@@ -51,7 +51,7 @@ export default function Hero() {
       }}>
 
         {/* ==================== TEXTO ==================== */}
-        <div>
+        <div style={{ minWidth: 0 }}>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -63,31 +63,32 @@ export default function Hero() {
               color: 'var(--olive)', marginBottom: 20,
             }}
           >
-            Dra. Raiane Fonseca · CRM 52.110051-3
+            CRM 52.110051-3
           </motion.p>
 
-          {/* Headline principal */}
+          {/* Headline principal — nome em destaque */}
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.35, duration: 0.7 }}
+            className="hero-name-wrap"
           >
             <h1 style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontWeight: 600,
-              fontSize: 'clamp(3.2rem, 6.5vw, 5.8rem)',
+              fontSize: 'clamp(3.4rem, 7vw, 6.2rem)',
               color: 'var(--teal)',
               lineHeight: 1.0,
               marginBottom: 6,
-            }}>Sucesso é</h1>
+            }}>Raiane</h1>
             <h1 style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontWeight: 500,
               fontStyle: 'italic',
-              fontSize: 'clamp(3.2rem, 6.5vw, 5.8rem)',
+              fontSize: 'clamp(3.4rem, 7vw, 6.2rem)',
               color: 'var(--burgundy)',
               lineHeight: 1.0,
-            }}>ter saúde.</h1>
+            }}>Fonseca.</h1>
           </motion.div>
 
           {/* Especialidades como pills */}
@@ -95,6 +96,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.55, duration: 0.5 }}
+            className="hero-pills"
             style={{ display: 'flex', gap: 8, flexWrap: 'wrap', margin: '24px 0 28px' }}
           >
             {pills.map(pill => (
@@ -116,12 +118,12 @@ export default function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.62, duration: 0.5 }}
+            className="hero-credencial"
             style={{
               fontFamily: "'Montserrat', sans-serif",
-              fontSize: 11, fontWeight: 600,
-              color: 'var(--olive)',
-              marginBottom: 22,
-              letterSpacing: '0.04em',
+              fontSize: 13, fontWeight: 500,
+              color: 'var(--gray)',
+              marginBottom: 18,
             }}
           >
             Referência em atendimento Cardiológico de qualidade em{' '}
@@ -133,28 +135,16 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.6 }}
+            className="hero-subtitle"
             style={{
               fontFamily: "'Montserrat', sans-serif",
-              fontSize: 15, color: 'var(--gray)',
-              lineHeight: 1.8, maxWidth: 440, marginBottom: 10,
+              fontSize: 15, fontWeight: 500, color: 'var(--gray)',
+              lineHeight: 1.8, maxWidth: 440, marginBottom: 36,
             }}
           >
-            Ajudo pessoas a prevenir infartos, AVC e doenças cardiometabólicas
-            através da cardiologia e da medicina do estilo de vida.
+            Ajudo pessoas a recuperarem energia e construírem uma vida mais saudável.
           </motion.p>
 
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.78, duration: 0.5 }}
-            style={{
-              fontFamily: "'Montserrat', sans-serif",
-              fontSize: 13, color: 'var(--gray-light)',
-              lineHeight: 1.7, maxWidth: 420, marginBottom: 36,
-            }}
-          >
-            Atendimento particular em Rio das Ostras, RJ e online.
-          </motion.p>
 
           {/* CTAs */}
           <motion.div
@@ -162,7 +152,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.88, duration: 0.6 }}
             className="hero-ctas"
-          style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}
+          style={{ display: 'flex', gap: 12, flexWrap: 'nowrap' }}
           >
             <a href={WA} target="_blank" rel="noopener noreferrer" className="btn-whatsapp">
               <WhatsAppIcon size={17} />
@@ -213,7 +203,7 @@ export default function Hero() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.5, duration: 0.8, ease: 'easeOut' }}
           className="hero-photo-col"
-          style={{ position: 'relative' }}
+          style={{ position: 'relative', minWidth: 0 }}
         >
           <div style={{
             position: 'absolute', top: 24, right: -16,
@@ -226,7 +216,7 @@ export default function Hero() {
             background: 'var(--burgundy)', borderRadius: 24, opacity: 0.06, zIndex: 0,
           }} />
 
-          <div style={{
+          <div className="hero-photo-wrap" style={{
             position: 'relative', zIndex: 1,
             borderRadius: 28, overflow: 'hidden',
             boxShadow: '0 24px 64px rgba(53,92,101,0.18)',
@@ -234,7 +224,8 @@ export default function Hero() {
             <img
               src={heroFoto}
               alt="Dra. Raiane Fonseca"
-              style={{ width: '100%', height: 540, objectFit: 'cover', objectPosition: 'top' }}
+              className="hero-main-img"
+              style={{ width: '100%', height: 540, objectFit: 'cover', objectPosition: 'top', display: 'block' }}
             />
             <div style={{
               position: 'absolute', bottom: 0, left: 0, right: 0,
@@ -246,7 +237,7 @@ export default function Hero() {
                 fontStyle: 'italic', fontSize: 20,
                 color: 'rgba(255,255,255,0.92)',
               }}>
-                "Não espere adoecer para começar a viver."
+                "Não espere adoecer para cuidar da sua saúde."
               </p>
             </div>
           </div>
@@ -300,9 +291,10 @@ export default function Hero() {
               display: 'flex', gap: 8, alignItems: 'center',
             }}
           >
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 700, fontSize: 12, color: 'white' }}>
-              🏃 Meia Maratonista
-            </p>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+              <Activity size={14} color="white" />
+              <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 700, fontSize: 12, color: 'white' }}>Meia Maratonista</p>
+            </div>
           </motion.div>
         </motion.div>
       </div>
@@ -328,27 +320,47 @@ export default function Hero() {
       </motion.div>
 
       <style>{`
+        #hero { padding: 0 !important; }
+        #hero .hero-container { grid-template-columns: 1fr 1fr; gap: 64px; padding-top: 100px; padding-bottom: 80px; }
+        #hero .hero-ctas a { padding: 13px 22px !important; font-size: 11px !important; white-space: nowrap; }
         @media (max-width: 900px) {
-          #hero .container { grid-template-columns: 1fr !important; gap: 24px !important; }
-          #hero .hero-photo-col { order: -1; }
-          #hero .hero-photo-col img { height: 420px !important; object-position: top center !important; }
+          #hero { padding: 0 !important; }
+          #hero .hero-container {
+            display: flex !important;
+            flex-direction: row !important;
+            gap: 16px !important;
+            padding-top: 90px !important;
+            padding-bottom: 48px !important;
+            align-items: center !important;
+          }
+          #hero .hero-container > div:first-child { flex: 1 !important; min-width: 0 !important; }
+          #hero .hero-photo-col {
+            flex: 1 !important;
+            min-width: 0 !important;
+            opacity: 1 !important;
+            transform: none !important;
+          }
+          .hero-photo-wrap { display: block !important; }
+          .hero-main-img { width: 100% !important; height: 380px !important; object-position: top center !important; }
           #hero .hero-badge { display: none !important; }
           #hero .hero-photo-col > div:nth-child(1),
           #hero .hero-photo-col > div:nth-child(2) { display: none !important; }
-        }
-        @media (max-width: 768px) {
-          #hero .container { padding-top: 88px !important; padding-bottom: 48px !important; }
-          #hero h1 { font-size: 2.8rem !important; line-height: 1.05 !important; }
-          #hero .hero-photo-col img { height: 380px !important; }
+          #hero h1 { font-size: clamp(1.6rem, 5vw, 3.2rem) !important; line-height: 1.05 !important; }
+          #hero .hero-name-wrap { display: flex !important; align-items: baseline; gap: 4px; flex-wrap: wrap; }
+          #hero .hero-pills { margin: 8px 0 10px !important; gap: 4px !important; flex-wrap: wrap !important; }
+          #hero .hero-pills span { font-size: 7px !important; padding: 3px 6px !important; }
+          #hero .hero-credencial { font-size: 10px !important; margin-bottom: 8px !important; }
+          #hero .hero-subtitle { font-size: 11px !important; margin-bottom: 12px !important; }
+          #hero .hero-ctas { flex-wrap: wrap !important; gap: 6px !important; }
+          #hero .hero-ctas a { font-size: 9px !important; padding: 8px 10px !important; }
+          #hero .hero-stats { margin-top: 16px !important; padding-top: 14px !important; }
+          #hero .hero-stats > div { padding: 0 6px !important; }
+          #hero .hero-stats p:first-of-type { font-size: 14px !important; }
+          #hero .hero-stats p:last-of-type { font-size: 7px !important; }
         }
         @media (max-width: 480px) {
-          #hero .container { padding-top: 84px !important; padding-bottom: 36px !important; }
-          #hero h1 { font-size: 2.4rem !important; }
-          #hero .hero-photo-col img { height: 340px !important; }
-          #hero .hero-ctas { flex-direction: column !important; gap: 10px !important; }
-          #hero .hero-ctas a { width: 100% !important; justify-content: center !important; }
-          #hero .hero-stats { margin-top: 32px !important; }
-          #hero .hero-stats > div { padding: 0 10px !important; }
+          .hero-main-img { height: 300px !important; }
+          #hero h1 { font-size: clamp(1.3rem, 6vw, 2rem) !important; }
         }
       `}</style>
     </section>

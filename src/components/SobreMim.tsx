@@ -69,20 +69,6 @@ export default function SobreMim() {
             />
           </motion.div>
 
-          {/* Badge Ecocardiografia */}
-          <motion.div
-            animate={{ y: [-5, 5, -5] }}
-            transition={{ repeat: Infinity, duration: 3.5, ease: 'easeInOut' }}
-            style={{
-              position: 'absolute', bottom: 32, right: -24, zIndex: 2,
-              background: 'white', borderRadius: 16, padding: '14px 20px',
-              boxShadow: '0 8px 28px rgba(0,0,0,0.1)',
-              border: '1px solid rgba(53,92,101,0.1)',
-            }}
-          >
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 800, fontSize: 11, color: 'var(--burgundy)', marginBottom: 2 }}>Ecocardiografia</p>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 10, color: 'var(--gray-light)' }}>RQE 51.268</p>
-          </motion.div>
         </motion.div>
 
         {/* ==================== TEXTO ==================== */}

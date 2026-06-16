@@ -1,10 +1,9 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Scale, Activity, TrendingUp, Zap, Moon, AlertCircle } from 'lucide-react'
-import corridaSeis from '../assets/corrida-raiane-6.jpeg'
 
 const sintomas = [
-  { icon: Scale,       label: 'Ganho de peso',     desc: 'mesmo sem mudar os hábitos' },
+  { icon: Scale,       label: 'Ganho de peso',     desc: 'e a sensação de perder o controle' },
   { icon: Activity,    label: 'Pressão subindo',    desc: 'e os exames piorando aos poucos' },
   { icon: TrendingUp,  label: 'Colesterol alto',    desc: 'sem saber por onde começar' },
   { icon: Zap,         label: 'Falta de energia',   desc: 'cansaço que não passa com descanso' },
@@ -25,56 +24,33 @@ export default function Problema() {
     <section id="problema" ref={ref} style={{ background: '#0e1e25', padding: '112px 0', overflow: 'hidden' }}>
       <div className="container">
 
-        {/* ==================== HEADER COM FOTO ==================== */}
-        <div className="problema-header" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56, alignItems: 'center', marginBottom: 72 }}>
+        {/* ==================== HEADER ==================== */}
+        <motion.div
+          custom={0} variants={fadeUp} initial="hidden" animate={inView ? 'visible' : 'hidden'}
+          style={{ textAlign: 'center', marginBottom: 72, maxWidth: 720, margin: '0 auto 72px' }}
+        >
+          <p style={{
+            fontFamily: "'Montserrat', sans-serif",
+            fontSize: 10, fontWeight: 700, letterSpacing: '0.3em',
+            textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)',
+            marginBottom: 20,
+          }}>Por que agir agora?</p>
 
-          <motion.div
-            custom={0} variants={fadeUp} initial="hidden" animate={inView ? 'visible' : 'hidden'}
-          >
-            <p style={{
-              fontFamily: "'Montserrat', sans-serif",
-              fontSize: 10, fontWeight: 700, letterSpacing: '0.3em',
-              textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)',
-              marginBottom: 20,
-            }}>Por que agir agora?</p>
-
-            <h2 style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontWeight: 600,
-              fontSize: 'clamp(2rem, 4vw, 3.2rem)',
-              color: 'white', lineHeight: 1.2,
-            }}>
-              Você não precisa esperar a doença aparecer
-              para cuidar da sua saúde.
-            </h2>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ delay: 0.25, duration: 0.85, ease: 'easeOut' }}
-            style={{ position: 'relative' }}
-          >
-            <div style={{
-              position: 'absolute', top: 16, right: -12,
-              width: '88%', height: '90%',
-              background: 'rgba(0,146,214,0.1)',
-              borderRadius: 24, zIndex: 0,
-            }} />
-            <div style={{ borderRadius: 20, overflow: 'hidden', boxShadow: '0 16px 48px rgba(0,0,0,0.5)', position: 'relative', zIndex: 1 }}>
-              <img
-                src={corridaSeis}
-                alt="Dra. Raiane Fonseca em corrida"
-                style={{ width: '100%', height: 'auto', display: 'block' }}
-              />
-            </div>
-          </motion.div>
-        </div>
+          <h2 style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontWeight: 600,
+            fontSize: 'clamp(2rem, 4vw, 3.2rem)',
+            color: 'white', lineHeight: 1.2,
+          }}>
+            Você não precisa esperar a doença aparecer
+            para cuidar da sua saúde.
+          </h2>
+        </motion.div>
 
         {/* ==================== SINTOMAS ==================== */}
         <div style={{
           display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)',
-          gap: 16, marginBottom: 64,
+          gap: 16, marginBottom: 32,
         }}>
           {sintomas.map((s, i) => {
             const Icon = s.icon
@@ -119,7 +95,7 @@ export default function Problema() {
           custom={8} variants={fadeUp} initial="hidden" animate={inView ? 'visible' : 'hidden'}
           style={{
             borderTop: '1px solid rgba(255,255,255,0.08)',
-            paddingTop: 56, textAlign: 'center',
+            paddingTop: 32, textAlign: 'center',
           }}
         >
           <p style={{
@@ -167,13 +143,17 @@ export default function Problema() {
       </div>
 
       <style>{`
-        @media (max-width: 900px) {
-          #problema .problema-header { grid-template-columns: 1fr !important; gap: 40px !important; }
-          #problema .problema-header > div:last-child { display: none !important; }
-          #problema .container > div:nth-child(2) { grid-template-columns: repeat(2, 1fr) !important; }
-        }
-        @media (max-width: 560px) {
-          #problema .container > div:nth-child(2) { grid-template-columns: 1fr !important; }
+        @media (max-width: 600px) {
+          #problema .container > div:nth-child(2) { grid-template-columns: repeat(3, 1fr) !important; gap: 8px !important; }
+          #problema .container > div:nth-child(2) > div {
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+            padding: 14px 8px !important;
+            gap: 8px !important;
+          }
+          #problema .container > div:nth-child(2) > div p:first-of-type { font-size: 11px !important; }
+          #problema .container > div:nth-child(2) > div p:last-of-type { font-size: 10px !important; }
         }
       `}</style>
     </section>

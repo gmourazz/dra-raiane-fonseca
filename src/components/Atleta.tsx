@@ -12,7 +12,7 @@ const stats = [
   { value: 'Diretoria', label: '@medicos.atletas' },
 ]
 
-const galeria = [corridaTres, corridaQuatro, corridaCinco]
+const galeria = [corridaDois, corridaQuatro, corridaCinco]
 
 export default function Atleta() {
   const ref = useRef(null)
@@ -68,24 +68,10 @@ export default function Atleta() {
               position: 'relative', zIndex: 1,
             }}>
               <img
-                src={corridaDois}
-                alt="Dra. Raiane Fonseca correndo"
-                style={{ width: '100%', height: 'auto', display: 'block' }}
+                src={corridaTres}
+                alt="Dra. Raiane Fonseca correndo na praia"
+                style={{ width: '100%', height: 540, objectFit: 'cover', objectPosition: 'center 20%', display: 'block' }}
               />
-              <div style={{
-                position: 'absolute', bottom: 0, left: 0, right: 0,
-                padding: '48px 28px 28px',
-                background: 'linear-gradient(to top, rgba(14,30,37,0.96) 0%, transparent 100%)',
-              }}>
-                <p style={{
-                  fontFamily: "'Cormorant Garamond', serif",
-                  fontStyle: 'italic', fontSize: 18,
-                  color: 'rgba(255,255,255,0.85)',
-                  lineHeight: 1.5,
-                }}>
-                  "Eu não prescrevo um estilo<br />de vida que eu não pratico."
-                </p>
-              </div>
             </div>
           </motion.div>
 

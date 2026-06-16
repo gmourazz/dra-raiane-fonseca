@@ -240,8 +240,9 @@ export default function Depoimentos() {
 
       <style>{`
         @media (max-width: 900px) {
-          #depoimentos .container > div:first-child { grid-template-columns: 1fr !important; gap: 40px !important; }
-          #depoimentos .container > div:first-child > div:first-child { display: none !important; }
+          #depoimentos .container > div:first-child { grid-template-columns: 1fr !important; gap: 28px !important; }
+          #depoimentos .container > div:first-child > div:first-child { order: -1 !important; }
+          #depoimentos .container > div:first-child > div:first-child img { height: 380px !important; object-fit: cover; object-position: center 40%; }
         }
         @media (max-width: 960px) {
           #depoimentos .container > div:nth-child(2) > div > div > div { grid-template-columns: 1fr !important; }

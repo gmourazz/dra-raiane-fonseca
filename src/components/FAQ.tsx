@@ -45,15 +45,6 @@ export default function FAQ() {
               alt="Dra. Raiane Fonseca — Dúvidas"
               style={{ width: '100%', height: 540, objectFit: 'cover', objectPosition: 'top' }}
             />
-            <div style={{
-              position: 'absolute', bottom: 0, left: 0, right: 0,
-              padding: '36px 24px 20px',
-              background: 'linear-gradient(to top, rgba(53,92,101,0.88) 0%, transparent 100%)',
-            }}>
-              <p style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', fontSize: 18, color: 'rgba(255,255,255,0.9)' }}>
-                "Tire suas dúvidas antes de marcar."
-              </p>
-            </div>
           </div>
         </motion.div>
 
@@ -119,8 +110,10 @@ export default function FAQ() {
 
       <style>{`
         @media (max-width: 900px) {
-          #faq .container { grid-template-columns: 1fr !important; gap: 40px !important; }
-          #faq .container > div:first-child { display: none !important; }
+          #faq .container { grid-template-columns: 1fr !important; gap: 28px !important; }
+          #faq .container > div:first-child { top: 0 !important; }
+          #faq .container > div:first-child > div:first-child { display: none !important; }
+          #faq .container > div:first-child img { height: 420px !important; object-position: top center !important; }
         }
       `}</style>
     </section>

@@ -8,12 +8,12 @@ const WA = 'https://wa.me/5522998491818?text=Ol%C3%A1!%20Gostaria%20de%20saber%2
 
 const links = [
   { label: 'Início',     href: '#hero',      id: 'hero'      },
-  { label: 'Sobre',      href: '#sobre',     id: 'sobre'     },
-  { label: 'Serviços',   href: '#jornada',   id: 'jornada'   },
+  { label: 'Sobre',      href: '#planos',    id: 'planos'    },
   { label: 'Check-ups',  href: '#checkups',  id: 'checkups'  },
-  { label: 'Clínica',    href: '#clinica',   id: 'clinica'   },
-  { label: 'Planos',     href: '#planos',    id: 'planos'    },
-  { label: 'Contato',    href: '#contato',   id: 'contato'   },
+  { label: 'Clínica',    href: '#clinica',      id: 'clinica'      },
+  { label: 'Feedbacks',  href: '#depoimentos', id: 'depoimentos'  },
+  { label: 'Dúvidas',    href: '#faq',         id: 'faq'          },
+  { label: 'Contato',    href: '#contato',     id: 'contato'      },
 ]
 
 export default function Navbar() {

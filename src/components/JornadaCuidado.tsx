@@ -74,21 +74,6 @@ export default function JornadaCuidado() {
             </div>
           </div>
 
-          {/* Floating badge */}
-          <motion.div
-            animate={{ y: [-5, 5, -5] }}
-            transition={{ repeat: Infinity, duration: 3.5, ease: 'easeInOut' }}
-            style={{
-              position: 'absolute', bottom: 44, right: -24, zIndex: 2,
-              background: 'white', borderRadius: 16,
-              padding: '14px 20px',
-              boxShadow: '0 8px 28px rgba(0,0,0,0.1)',
-              border: '1px solid rgba(53,92,101,0.1)',
-            }}
-          >
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 800, fontSize: 11, color: 'var(--teal)', marginBottom: 2 }}>3 Serviços</p>
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 10, color: 'var(--gray-light)' }}>Atendimento particular</p>
-          </motion.div>
         </motion.div>
 
         {/* Right: title + cards */}

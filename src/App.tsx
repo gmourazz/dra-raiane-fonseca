@@ -2,12 +2,8 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Problema from './components/Problema'
 import PlanosAcompanhamento from './components/PlanosAcompanhamento'
-import Atleta from './components/Atleta'
 import PorQueEscolher from './components/PorQueEscolher'
-import SobreMim from './components/SobreMim'
-import MissaoVisaoValores from './components/MissaoVisaoValores'
 import FormacaoAcademica from './components/FormacaoAcademica'
-import JornadaCuidado from './components/JornadaCuidado'
 import ExamesComplementares from './components/ExamesComplementares'
 import Checkups from './components/Checkups'
 import Clinica from './components/Clinica'
@@ -26,12 +22,8 @@ function App() {
       <Hero />
       <Problema />
       <PlanosAcompanhamento />
-      <Atleta />
       <PorQueEscolher />
-      <SobreMim />
-      <MissaoVisaoValores />
       <FormacaoAcademica />
-      <JornadaCuidado />
       <ExamesComplementares />
       <Checkups />
       <Clinica />

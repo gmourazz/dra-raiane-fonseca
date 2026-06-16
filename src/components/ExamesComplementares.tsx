@@ -1,33 +1,32 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Heart, BarChart2, Activity, Scan, Brain, Weight, CheckCircle2, MessageCircle } from 'lucide-react'
-import especialidadesFoto from '../assets/secao-de-especialidades-raiane.jpeg'
+import { CheckCircle2, MessageCircle } from 'lucide-react'
 
 const WA = 'https://wa.me/5522998491818?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20trabalho%20da%20dra.%20Raiane.%20%F0%9F%AB%80'
 
 const exames = [
   {
-    icon: Heart, title: 'Eletrocardiograma', color: 'var(--teal)',
+    title: 'Eletrocardiograma', color: 'var(--teal)',
     items: [<>Exame que <strong>registra a atividade elétrica do coração</strong>, sendo uma ferramenta diagnóstica rápida, indolor e não invasiva.</>],
   },
   {
-    icon: BarChart2, title: 'MAPA 24hrs', color: 'var(--burgundy)',
+    title: 'MAPA 24hrs', color: 'var(--burgundy)',
     items: [<>Avalia o comportamento da pressão arterial ao longo do dia e da noite, trazendo mais precisão para o diagnóstico.</>, <>Pode ser realizado no consultório ou <strong>em domicílio</strong>.</>],
   },
   {
-    icon: Activity, title: 'Holter', color: 'var(--olive)',
+    title: 'Holter', color: 'var(--olive)',
     items: [<>Monitora o ritmo do coração continuamente, ajudando a identificar arritmias e palpitações.</>, <>Monitoramento por <strong>24 horas</strong>, <strong>3 dias</strong> e <strong>7 dias</strong>.</>],
   },
   {
-    icon: Scan, title: 'Ecocardiograma com Doppler', color: 'var(--teal)',
+    title: 'Ecocardiograma com Doppler', color: 'var(--teal)',
     items: [<>Avalia a <strong>estrutura e o funcionamento do coração</strong> (ultrassom cardíaco).</>, <>Função cardíaca · Válvulas · Estrutura do coração</>],
   },
   {
-    icon: Brain, title: 'Doppler de Carótidas e Vertebrais', color: 'var(--burgundy)',
+    title: 'Doppler de Carótidas e Vertebrais', color: 'var(--burgundy)',
     items: [<>Identifica <strong>placas de gordura nas artérias</strong> que levam sangue ao cérebro.</>, <>Avalia o <strong>risco de AVC</strong> de forma antecipada.</>],
   },
   {
-    icon: Weight, title: 'Bioimpedância', color: 'var(--olive)',
+    title: 'Bioimpedância', color: 'var(--olive)',
     items: [<>Avalia a <strong>composição corporal</strong>: gordura, massa muscular, água e massa óssea.</>, <>Auxilia em estratégias eficazes para saúde metabólica.</>],
   },
 ]
@@ -46,54 +45,21 @@ export default function ExamesComplementares() {
     <section id="exames" style={{ background: 'var(--cream)', padding: '112px 0' }}>
       <div className="container" ref={ref}>
 
-        {/* ==================== HEADER COM FOTO ==================== */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center', marginBottom: 72 }}>
-          <div>
-            <motion.p
-              initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}
-              style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', color: 'var(--teal)', marginBottom: 12 }}
-            >Diagnóstico</motion.p>
-
-            <motion.h2
-              initial={{ opacity: 0, y: 28 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.1, duration: 0.7 }}
-              style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2.2rem, 3.5vw, 3.2rem)', fontWeight: 600, color: 'var(--teal)', lineHeight: 1.1, marginBottom: 20 }}
-            >Exames Complementares</motion.h2>
-
-            <motion.p
-              initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.2, duration: 0.6 }}
-              style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, color: 'var(--gray)', lineHeight: 1.78, maxWidth: 400 }}
-            >
-              Ferramentas de precisão para entender o que está acontecendo
-              no seu coração, antes que os sintomas apareçam.
-            </motion.p>
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ delay: 0.25, duration: 0.8, ease: 'easeOut' }}
-            style={{ position: 'relative' }}
-          >
-            <div style={{
-              position: 'absolute', top: 16, right: -12,
-              width: '88%', height: '90%',
-              background: 'var(--teal)', opacity: 0.06,
-              borderRadius: 24, zIndex: 0,
-            }} />
-            <div style={{ borderRadius: 20, overflow: 'hidden', boxShadow: '0 16px 48px rgba(53,92,101,0.16)', position: 'relative', zIndex: 1 }}>
-              <img
-                src={especialidadesFoto}
-                alt="Dra. Raiane Fonseca — Exames"
-                style={{ width: '100%', height: 'auto', display: 'block' }}
-              />
-            </div>
-          </motion.div>
-        </div>
+        {/* ==================== HEADER ==================== */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}
+          style={{ textAlign: 'center', marginBottom: 56 }}
+        >
+          <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', color: 'var(--teal)', marginBottom: 12 }}>Diagnóstico</p>
+          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2.2rem, 3.5vw, 3.2rem)', fontWeight: 600, color: 'var(--teal)', lineHeight: 1.1, marginBottom: 20 }}>Exames Complementares</h2>
+          <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, color: 'var(--gray)', lineHeight: 1.78, maxWidth: 560, margin: '0 auto' }}>
+            Ferramentas de precisão para entender o que está acontecendo no seu coração, antes que os sintomas apareçam.
+          </p>
+        </motion.div>
 
         {/* ==================== CARDS DOS EXAMES ==================== */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
           {exames.map((e, i) => {
-            const Icon = e.icon
             return (
               <motion.div
                 key={i}
@@ -109,11 +75,9 @@ export default function ExamesComplementares() {
                   cursor: 'default', transition: 'box-shadow 0.25s',
                 }}
               >
-                <div style={{ height: 64, borderRadius: 12, background: colorMap[e.color], display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Icon size={28} color={e.color} />
+                <div style={{ height: 64, borderRadius: 12, background: colorMap[e.color], display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 12px' }}>
+                  <h3 style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 800, fontSize: 11, letterSpacing: '0.1em', textTransform: 'uppercase', color: e.color, textAlign: 'center', lineHeight: 1.3, margin: 0 }}>{e.title}</h3>
                 </div>
-
-                <h3 style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 800, fontSize: 12, letterSpacing: '0.1em', textTransform: 'uppercase', color: e.color }}>{e.title}</h3>
 
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 8, flex: 1 }}>
                   {e.items.map((item, j) => (
@@ -148,11 +112,9 @@ export default function ExamesComplementares() {
 
       <style>{`
         @media (max-width: 900px) {
-          #exames .container > div:first-child { grid-template-columns: 1fr !important; gap: 40px !important; }
-          #exames .container > div:first-child > div:last-child { display: none !important; }
           #exames .container > div:last-child { grid-template-columns: repeat(2,1fr)!important; }
         }
-        @media (max-width: 600px) { #exames .container > div:last-child { grid-template-columns: 1fr!important; } }
+        @media (max-width: 480px) { #exames .container > div:last-child { grid-template-columns: 1fr!important; } }
       `}</style>
     </section>
   )

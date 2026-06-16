@@ -4,12 +4,13 @@ import WhatsAppIcon from './WhatsAppIcon'
 const WA_LINK = 'https://wa.me/5522998491818?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20trabalho%20da%20dra.%20Raiane.%20%F0%9F%AB%80'
 
 const navLinks = [
-  { href: '#sobre', label: 'Sobre Mim' },
-  { href: '#jornada', label: 'Serviços' },
-  { href: '#exames', label: 'Exames' },
-  { href: '#planos', label: 'Planos' },
-  { href: '#depoimentos', label: 'Depoimentos' },
-  { href: '#contato', label: 'Contato' },
+  { href: '#hero',        label: 'Início'     },
+  { href: '#planos',      label: 'Sobre'      },
+  { href: '#checkups',    label: 'Check-ups'  },
+  { href: '#clinica',     label: 'Clínica'    },
+  { href: '#depoimentos', label: 'Feedbacks'  },
+  { href: '#faq',         label: 'Dúvidas'    },
+  { href: '#contato',     label: 'Contato'    },
 ]
 
 export default function Footer() {

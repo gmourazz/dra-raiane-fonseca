@@ -1,16 +1,28 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
 import { MapPin, ChevronLeft, ChevronRight, X } from 'lucide-react'
-import featuredImg from '../assets/consultorio/consultorio-01.jpeg'
+import featuredImg from '../assets/consultorio/consultorio-novo-03.jpeg'
+import c01 from '../assets/consultorio/consultorio-01.jpeg'
 import c02 from '../assets/consultorio/consultorio-02.jpeg'
-import c03 from '../assets/consultorio/consultorio-03.jpeg'
-import c04 from '../assets/consultorio/consultorio-04.jpeg'
 import c05 from '../assets/consultorio/consultorio-05.jpeg'
 import c06 from '../assets/consultorio/consultorio-06.jpeg'
 import c07 from '../assets/consultorio/consultorio-07.jpeg'
 import c08 from '../assets/consultorio/consultorio-08.jpeg'
+import cNovo from '../assets/consultorio/consultorio-novo.jpeg'
+import cNovo2 from '../assets/consultorio/consultorio-novo-2.jpeg'
+import medalhas from '../assets/medalhas.jpg'
 
-const gallery = [c02, c03, c04, c05, c06, c07, c08]
+const gallery = [
+  { src: cNovo },
+  { src: c01 },
+  { src: c02 },
+  { src: cNovo2 },
+  { src: medalhas, pos: 'center 35%' },
+  { src: c05 },
+  { src: c06 },
+  { src: c07 },
+  { src: c08 },
+]
 
 const slideVariants = {
   enter: (dir: number) => ({ x: dir > 0 ? 280 : -280, opacity: 0 }),
@@ -61,6 +73,7 @@ export default function Clinica() {
 
   const visibleImages = [0, 1, 2].map(o => gallery[(slide + o) % len])
 
+
   return (
     <section id="clinica" style={{ background: 'var(--cream-dark)', padding: '112px 0' }}>
       <div className="container" ref={ref}>
@@ -80,15 +93,16 @@ export default function Clinica() {
 
             <motion.p
               initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.2, duration: 0.6 }}
-              style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, color: 'var(--gray)', lineHeight: 1.78, marginBottom: 28 }}
+              style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 14, color: 'var(--gray)', lineHeight: 1.78, marginBottom: 32 }}
             >
               Um espaço pensado para acolher com calma e cuidar com profundidade.
-              Equipamentos modernos e um ambiente que transmite segurança desde o primeiro momento.
+              Equipamentos modernos em um ambiente que transmite segurança desde o primeiro momento.
             </motion.p>
 
+
             <motion.div
-              initial={{ opacity: 0, y: 12 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.3, duration: 0.5 }}
-              style={{ display: 'flex', alignItems: 'flex-start', gap: 10 }}
+              initial={{ opacity: 0, y: 12 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.45, duration: 0.5 }}
+              style={{ display: 'flex', alignItems: 'flex-start', gap: 10, paddingTop: 20, borderTop: '1px solid rgba(53,92,101,0.1)' }}
             >
               <MapPin size={15} color="var(--burgundy)" style={{ marginTop: 2, flexShrink: 0 }} />
               <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 13, color: 'var(--gray-light)', lineHeight: 1.65 }}>
@@ -109,7 +123,7 @@ export default function Clinica() {
               <img
                 src={featuredImg}
                 alt="Consultório Dra. Raiane Fonseca"
-                style={{ width: '100%', height: 340, objectFit: 'cover', objectPosition: 'center', display: 'block' }}
+                style={{ width: '100%', height: 460, objectFit: 'cover', objectPosition: 'center 35%', display: 'block' }}
               />
             </div>
           </motion.div>
@@ -137,7 +151,7 @@ export default function Clinica() {
                   className="clinica-gallery-grid"
                   style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}
                 >
-                  {visibleImages.map((src, i) => (
+                  {visibleImages.map((img, i) => (
                     <div
                       key={i}
                       onClick={() => openLightbox(i)}
@@ -145,13 +159,14 @@ export default function Clinica() {
                         borderRadius: 14, overflow: 'hidden',
                         boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
                         cursor: 'zoom-in', position: 'relative',
+                        background: 'transparent',
                       }}
                       className="clinica-thumb"
                     >
                       <img
-                        src={src}
+                        src={img.src}
                         alt="Consultório"
-                        style={{ width: '100%', height: 200, objectFit: 'cover', objectPosition: 'center', display: 'block', transition: 'transform 0.35s' }}
+                        style={{ width: '100%', height: 200, objectFit: 'cover', objectPosition: img.pos ?? 'center', display: 'block', transition: 'transform 0.35s' }}
                         className="clinica-thumb-img"
                       />
                     </div>
@@ -237,7 +252,7 @@ export default function Clinica() {
               style={{ position: 'relative', maxWidth: 900, width: '100%' }}
             >
               <img
-                src={gallery[lightbox]}
+                src={gallery[lightbox].src}
                 alt="Consultório ampliado"
                 style={{ width: '100%', maxHeight: '80vh', objectFit: 'contain', borderRadius: 16, display: 'block' }}
               />
@@ -306,8 +321,10 @@ export default function Clinica() {
       <style>{`
         .clinica-thumb-img:hover { transform: scale(1.05); }
         @media (max-width: 900px) {
-          #clinica .container > div:first-child { grid-template-columns: 1fr !important; gap: 40px !important; }
-          #clinica .container > div:first-child > div:last-child { display: none !important; }
+          #clinica .container > div:first-child { grid-template-columns: 1fr !important; gap: 28px !important; }
+          #clinica .container > div:first-child > div:last-child { order: -1 !important; }
+          #clinica .container > div:first-child > div:last-child img { height: 320px !important; object-position: center 35% !important; }
+          #clinica .container > div:first-child > div:last-child > div:first-child { display: none !important; }
         }
         @media (max-width: 600px) {
           .clinica-gallery-grid { grid-template-columns: repeat(2, 1fr) !important; }

@@ -22,15 +22,19 @@ const checkups = [
   },
   {
     icon: Activity, color: '#621132', bg: 'rgba(98,17,50,0.08)',
-    title: 'Check-up Cardiometabólico',
+    title: 'Check-up Cardiometabólico Avançado',
     subtitle: 'Avaliação integrada',
-    desc: 'Abordagem completa que integra saúde cardíaca, metabolismo e estilo de vida em um único protocolo.',
+    desc: 'Uma investigação profunda do seu coração, circulação, metabolismo e hábitos de vida para identificar riscos precocemente e construir um plano claro para o seu futuro.',
     items: [
-      'Tudo do Check-up Cardiovascular',
-      'Avaliação metabólica completa',
-      'Análise detalhada do estilo de vida',
-      'Composição corporal',
-      'Protocolo de acompanhamento',
+      'Consulta médica detalhada',
+      'Eletrocardiograma',
+      'Ecocardiograma com Doppler',
+      'Doppler de Carótidas e Vertebrais',
+      'MAPA 24h',
+      'Holter 24h',
+      'Avaliação de risco cardiovascular',
+      'Avaliação do estilo de vida',
+      'Plano personalizado de prevenção',
     ],
     highlight: true,
   },
@@ -99,7 +103,7 @@ export default function Checkups() {
                     fontFamily: "'Montserrat', sans-serif", fontSize: 9, fontWeight: 700,
                     letterSpacing: '0.16em', textTransform: 'uppercase',
                     padding: '5px 12px', borderRadius: 50,
-                  }}>Mais Completo</div>
+                  }}>Avaliação Integrada</div>
                 )}
 
                 <div style={{ width: 52, height: 52, borderRadius: 14, background: c.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 20 }}>
